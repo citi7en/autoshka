@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Автошка online | <%= @title %></title>
-	<link rel="stylesheet" href="public/stylesheets/main.css" />
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/stylesheets/main.css" />
 	<!--[if IE]>
 	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--[if lte IE 7]>
@@ -13,7 +13,19 @@
 </head>
 
 	<body>
+		<header>
+			<h1><a href="#">Автошка <strong>online версия ежемесячной детской газеты</strong></a></h1>
+			<nav><ul>
+				<li><a href="#">Свежий номер</a></li>
+				<li><a href="#">Архив</a></li>
+				<li><a href="#">Авторы</a></li>
+				<li><a href="#">Общение</a></li>
+			</ul></nav>
+		</header><!-- /#banner -->
 		<%= yield %>
+		<footer>
+			<p>2010 <a href="http://github.com/citi7en">citi7en</a></p>
+		</footer><!-- /#contentinfo -->
 	</body>
 </html>
 
