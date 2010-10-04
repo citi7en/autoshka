@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title><%= title %></title>
-	<link rel="stylesheet" href="/stylesheets/main.css" />
-	<!--[if IE]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<!--[if lte IE 7]>
-	  <script src="js/IE8.js"></script><![endif]-->
-	<!--[if lt IE 7]>
-	  <link rel="stylesheet" media="all" href="css/ie6.css"/><![endif]-->
-</head>
-
-	<body>
+<html lang="ru">
+  <head>
+		<meta charset="UTF-8" />
+    <title><%= title %></title>
+		<%= stylesheet_link_tag 'main', :media => 'screen' %>
+  </head>
+  <body>
 		<header>
-			<h1><a href="#">Автошка <strong>online версия ежемесячной детской газеты</strong></a></h1>
-			<nav><ul>
-				<li><a href="#">Свежий номер</a></li>
-				<li><a href="#">Архив</a></li>
-				<li><a href="#">Авторы</a></li>
-				<li><a href="#">Общение</a></li>
-			</ul></nav>
-		</header><!-- /#banner -->
-		<%= yield %>
-		<footer>
-			<p>2010 <a href="http://github.com/citi7en">citi7en</a></p>
-		</footer><!-- /#contentinfo -->
-	</body>
+			<h1>Автошка online</h1>
+		</header>
+		<nav class="round">
+			<ul>
+				<li><%= link_to "Свежий номер", '#' %></li>
+				<li><%= link_to "Архив", '#' %></li>
+				<li><%= link_to "Авторы", '#' %></li>
+				<li><%= link_to "Общение", '#' %></li>
+				<li><%= link_to "О сайте", '#' %></li>
+			</ul>
+		</nav>
+		<section>
+			<%= yield %>
+		</section>
+		<footer class="round">
+				citi7en
+		</footer>
+  </body>
 </html>
 
