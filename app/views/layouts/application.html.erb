@@ -6,24 +6,21 @@
 		<%= stylesheet_link_tag 'main', :media => 'screen' %>
   </head>
   <body>
-		<header>
-			<h1>Автошка online</h1>
-		</header>
-		<nav class="round">
-			<ul>
-				<li><%= link_to "Свежий номер", '#' %></li>
-				<li><%= link_to "Архив", '#' %></li>
-				<li><%= link_to "Авторы", '#' %></li>
-				<li><%= link_to "Общение", '#' %></li>
-				<li><%= link_to "О сайте", '#' %></li>
-			</ul>
-		</nav>
-		<section>
-			<%= yield %>
-		</section>
-		<footer class="round">
-				citi7en
-		</footer>
+		<table class="table_main">
+			<tr><td class="top">
+			<!-- top -->
+				<%= render 'layouts/header' %>
+				<div id="content">
+					<%= yield %>
+				</div>
+			<!-- /top -->
+			</td></tr>
+			<tr><td class="bottom">
+			<!-- bottom -->
+				<%= render 'layouts/footer' %>
+			<!-- bottom -->
+			</td></tr>
+		</table>
   </body>
 </html>
 
