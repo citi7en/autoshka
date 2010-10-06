@@ -17,12 +17,45 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 
-@font-face {
-	font-family: 'PTSansRegular';
-	src: url('/fonts/PTS55F-webfont.eot');
-	src: local('O'), url('/fonts/PTS55F-webfont.woff') format('woff'), url('/fonts/PTS55F-webfont.ttf') format('truetype'), url('/fonts/PTS55F-webfont.svg#webfontmBFaK3EM') format('svg');
-	font-weight: normal;	font-style: normal;
-}
+@font-face {font-family: 'PT Sans'; 
+	src: url('/fonts/pts55f.eot'); 
+	src: local('PT Sans'), url('/fonts/pts55f.woff') format('woff'), url('/fonts/pts55f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans'; 
+	font-style: italic;
+	src: url('/fonts/pts56f.eot'); 
+	src: local('PT Sans Italic'), url('/fonts/pts56f.woff') format('woff'), url('/fonts/pts56f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans';
+	src: url('/fonts/pts75f.eot');
+	font-style: normal;
+	font-weight: bold; 
+src: local('PT Sans Bold'), url('/fonts/pts75f.woff') format('woff'), url('/fonts/pts75f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans';
+	font-style: italic;
+	font-weight: bold; 
+	src: url('/fonts/pts76f.eot'); 
+	src: local('PT Sans Bold Italic'), url('/fonts/pts76f.woff') format('woff'), url('/fonts/pts76f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans Caption'; 
+	src: url('/fonts/ptc55f.eot');
+	src: local('PT Sans Caption'), url('/fonts/ptc55f.woff') format('woff'), url('/fonts/ptc55f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans Caption';
+	font-weight: bold; 
+	src: url('/fonts/ptc75f.eot');
+	src: local('PT Sans Caption Bold'), url('/fonts/ptc75f.woff') format('woff'), url('/fonts/ptc75f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans Narrow';
+	src: url('/fonts/ptn57f.eot');
+	src: local('PT Sans Narrow'), url('/fonts/ptn57f.woff') format('woff'), url('/fonts/ptn57f.ttf') format('truetype');}
+
+@font-face {font-family: 'PT Sans Narrow';
+	font-weight: bold; 
+	src: url('/fonts/ptn77f.eot');
+	src: local('PT Sans Narrow Bold'), url('/fonts/ptn77f.woff') format('woff'), url('/fonts/pts77f.ttf') format('truetype');}
+
 
 html {
 	height: 100%;
@@ -30,7 +63,8 @@ html {
 
 body {
 	margin: 0;
-	font-family: 'PTSansRegular', Impact, Helvetica, Arial, sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
 	background-color: #fff;
 	height: 100%;
 }
@@ -39,7 +73,11 @@ header, footer, nav, aside, section {
 	display: block;
 }
 
-h1 { font-family: 'PTSansRegular', Impact, arial, serif; }
+h1 {
+	font-family: 'PT Sans Caption', Helvetica, Arial, serif;
+	font-size: 1.2em;
+	font-weight: bold;
+}
 
 header {
 	margin: 1em;
@@ -80,7 +118,7 @@ nav ul li a:hover {
 }
 
 #content {
-	margin: 1em;
+	margin: 1em 1.4em;
 }
 
 footer {
