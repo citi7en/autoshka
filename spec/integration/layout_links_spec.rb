@@ -20,4 +20,12 @@ describe "LayoutLinks" do
 		get '/signup'
 		response.should render_template('users/new')
 	end
+
+	it "should have the right links on the layout" do
+		visit root_path
+		click_link "О сайте"
+		response.should render_template('pages/about.html.erb')
+		click_link "Свежий номер"
+		response.should render_template('pages/home.html.erb')
+	end
 end
