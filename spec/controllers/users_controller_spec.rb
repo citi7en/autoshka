@@ -14,4 +14,7 @@ describe UsersController do
 			response.should have_tag("title", /Регистрация/)
 		end
   end
+
+	describe "GET 'show'" 
+	  
 end
