@@ -17,17 +17,38 @@ class User < ActiveRecord::Base
 
 	EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	
-	validates_presence_of :name, :email
-	validates_length_of		:name, :maximum => 50
-	validates_format_of		:email, :with => EmailRegex
-	validates_uniqueness_of	:email, :name, :case_sensitive => false
+	validates_presence_of :name, 
+												:message => 'должно быть введено.'
+	validates_presence_of :email,
+												:message => 'должен быть введён.'
+	validates_length_of		:name, :maximum => 20,
+												:message => 'должно не больше 20 символов'
+	validates_format_of		:email, :with => EmailRegex,
+												:message => 'имеет неправильный формат.'
 
+	validates_uniqueness_of	:name, :case_sensitive => false,
+													:message => 'уже использовано.'
+	validates_uniqueness_of :email, :case_sensitive => false,
+													:message => 'уже использован.'
 	# Automatically create the virtual attribute 'password_confirmation'.
-	validates_confirmation_of	:password
+	validates_confirmation_of	:password,
+							:message => 'должен совпадать с полем для подтверждения.'
 
 	# Password validations.
-	validates_presence_of :password
-	validates_length_of		:password, :within => 6..40
+	validates_presence_of :password,
+												:message => 'должен быть введён.'
+	validates_length_of		:password, :within => 6..40,
+												:message => 'должен быть от 6 до 40 символов.'
+
+	HUMAN_ATTRIBUTES = {
+			:name => "Имя пользователя",
+			:email => "Адрес электронной почты",
+			:password => "Пароль"
+		}
+
+	def self.human_attribute_name(attr)
+		HUMAN_ATTRIBUTES[attr.to_sym] || super
+	end
 
 
 	before_save :encrypt_password
