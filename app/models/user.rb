@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	
 	validates_presence_of :name, 
-												:message => 'должно быть введено.'
+												:message => "^Необходимо ввести имя."
 	validates_presence_of :email,
 												:message => 'должен быть введён.'
 	validates_length_of		:name, :maximum => 20,
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 												:message => 'должен быть введён.'
 	validates_length_of		:password, :within => 6..40,
 												:message => 'должен быть от 6 до 40 символов.'
-
+=begin
 	HUMAN_ATTRIBUTES = {
 			:name => "Имя пользователя",
 			:email => "Адрес электронной почты",
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
 	def self.human_attribute_name(attr)
 		HUMAN_ATTRIBUTES[attr.to_sym] || super
 	end
-
+=end
 
 	before_save :encrypt_password
 
