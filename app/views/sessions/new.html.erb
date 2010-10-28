@@ -1,0 +1,17 @@
+<h2>Вход</h2>
+
+<% form_for(:session, :url => sessions_path) do |f| %>
+	<div class="field">
+		<%= f.label :email, "Адрес электронной почты" %><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class="field">
+		<%= f.label :password, "Пароль" %><br />
+		<%= f.password_field :password %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Войти" %>
+	</div>
+<% end %>
+
+<p>Новый пользователь? <%= link_to "Регистрация", signup_path %></p>

@@ -1,14 +1,3 @@
-# == Schema Information
-# Schema version: 20101006110843
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
 require 'digest'
 
 class User < ActiveRecord::Base
@@ -55,6 +44,11 @@ class User < ActiveRecord::Base
 
 	def has_password?(submitted_password)
 		encrypted_password == encrypt(submitted_password)
+	end
+
+	def remember_me!
+		self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}")
+		save_without_validation
 	end
 
 	def self.authenticate(email, submitted_password)

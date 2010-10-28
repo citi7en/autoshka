@@ -123,6 +123,39 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+.control {
+	float: right;
+	background-color: #fff;
+	padding: 0 0.7em;
+	white-space: nowrap;
+}
+
+ul.control {
+	margin: 0;
+	border: 0.1em solid #ff7f2a;
+}
+
+.control li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 0;
+}
+
+.control li a {
+	text-decoration: none;
+	padding: 0 0.4em;
+	font-weight: bold;
+	color:  #ff7f2a;
+}
+
+.control li a:visited {
+	color: #ff7f2a;
+}
+
+.control la a:hover {
+	text-decoration: underline;
+}
+
 #content {
 	margin: 1em 1.4em;
 }
@@ -187,7 +220,7 @@ div.field, div.actions {
   color: #333;
   margin-bottom: 0;
 	padding-left: 0.2em;
-	text-weight: bold;
+	font-weight: bold;
 	font-size: 1.2em;
 }
 
@@ -197,8 +230,17 @@ div.field, div.actions {
 	margin-left: 1.5em;
 }
 
-.flashsuccess {
+.flash {
 	font-size: 1.2em;
 	font-weight: bold;
+	color: #9ade00;
+	margin-bottom: 1em;
+}
+
+.error {
+	color: #c00;
+}
+
+.success {
 	color: #9ade00;
 }

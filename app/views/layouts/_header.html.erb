@@ -1,5 +1,13 @@
 <header>
-  <h1>Автошка online</h1>
+	<%= link_to logo, root_path %>
+	<ul class="control round">
+		<% if signed_in? %>
+			<li><%= link_to "Профиль", current_user %></li>
+			<li><%= link_to "Выйти", signout_path, :method => :delete %></li>
+		<% else %>
+			<li><%= link_to "Войти", signin_path %></li>
+		<% end %>
+	</ul>
 </header>
 <nav class="round">
   <ul>
