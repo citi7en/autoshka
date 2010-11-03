@@ -244,3 +244,11 @@ div.field, div.actions {
 .success {
 	color: #9ade00;
 }
+
+ul.users {
+	margin-top: 1em;
+}
+
+.users li {
+	list-style: none;
+}
