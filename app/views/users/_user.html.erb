@@ -1,3 +1,7 @@
 <li>
   <%= link_to h(user.name), user %>
+	<% if current_user.admin? %>
+		| <%= link_to "удалить", user, :method => :delete,
+																	 :confirm => "Вы уверены?" %>
+	<% end %>
 </li>

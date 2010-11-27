@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 												:message => "^Необходимо ввести имя."
 	validates_presence_of :email,
 												:message => 'должен быть введён.'
-	validates_length_of		:name, :maximum => 20,
+	validates_length_of		:name, :maximum => 30,
 												:message => 'должно не больше 20 символов'
 	validates_format_of		:email, :with => EmailRegex,
 												:message => 'имеет неправильный формат.'

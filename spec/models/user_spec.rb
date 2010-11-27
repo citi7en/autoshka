@@ -26,7 +26,7 @@ describe User do
 	end
 
 	it "should reject names that are too long" do
-		long_name = "a" * 21
+		long_name = "a" * 31
 		long_name_user = User.new(@attr.merge(:name => long_name))
 		long_name_user.should_not be_valid
 	end
@@ -164,4 +164,25 @@ describe User do
 			@user.remember_token.should_not be_nil
 		end
 	end
+
+	describe "admin attribute" do
+
+		before(:each) do
+			@user = User.create!(@attr)
+		end
+
+		it "should respond to admin" do
+			@user.should respond_to(:admin)
+		end
+
+		it "should not be an admin by default" do
+			@user.should_not be_admin
+		end
+
+		it "should be convertible to an admin" do
+			@user.toggle!(:admin)
+			@user.should be_admin
+		end
+	end
+
 end
