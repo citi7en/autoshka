@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101125194939) do
+ActiveRecord::Schema.define(:version => 20101127121205) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title",      :limit => 100
+    t.string   "rubric",     :limit => 100
+    t.text     "content"
+    t.text     "autor",      :limit => 100
+    t.integer  "release",    :limit => 5000
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
