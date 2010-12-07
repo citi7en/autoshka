@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20101127121205) do
     t.string   "title",      :limit => 100
     t.string   "rubric",     :limit => 100
     t.text     "content"
-    t.text     "autor",      :limit => 100
-    t.integer  "release",    :limit => 5000
+    t.text     "autor",      :limit => 255
+    t.integer  "release"
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
