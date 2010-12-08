@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :title, :limit => 100
       t.string :rubric, :limit => 100
       t.text :content
-      t.text :autor, :limit => 100
+      t.string :autor, :limit => 100
       t.integer :release, :limit => 5000
       t.date :date
 

@@ -1,0 +1,18 @@
+<h1>
+  <%= h @article.title %>
+</h1>
+<h2 class="article">
+  Рубрика: <%= h @article.rubric %>
+</h2>
+<h2 class="article">
+  Автор: <%= h @article.autor %>
+</h2>
+<h2 class="article">
+  Номер выпуска: <%= h @article.release %>
+</h2>
+<h2 class="article">
+  Дата: <%= h @article.date %>
+</h2>
+<div class="article_content">
+  <%= h @article.content %>
+</div>

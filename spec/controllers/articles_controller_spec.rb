@@ -15,6 +15,54 @@ describe ArticlesController do
 		end
 	end
 
+  describe "GET 'show'" do
+
+    before(:each) do
+      @article = Factory(:article)
+      Article.stub!(:find, @article.id).and_return(@article)
+    end
+
+    it "should be successfull" do
+      get :show, :id => @article
+      response.should be_success
+    end
+
+    it "should have the right title" do
+      get :show, :id => @article
+      response.should have_tag("title", /#{@article.title}/)
+    end
+
+    it "should include the article's title" do
+      get :show, :id => @article
+      response.should have_tag("h1", /#{@article.title}/)
+    end
+
+    it "should include the article's rubric" do
+      get :show, :id => @article
+      response.should have_tag("h2", /#{@article.rubric}/)
+    end
+
+    it "should include the article's autor" do
+      get :show, :id => @article
+      response.should have_tag("h2", /#{@article.autor}/)
+    end
+    
+    it "should include the article's release number" do
+      get :show, :id => @article
+      response.should have_tag("h2", /#{@article.release}/)
+    end
+
+    it "should include the article's date" do
+      get :show, :id => @article
+      response.should have_tag("h2", /#{@article.date}/)
+    end
+
+    it "should include tha article's date" do
+      get :show, :id => @article
+      response.should have_tag("div.article_content", /#{@article.content}/)
+    end
+  end
+
   describe "POST 'create'" do
 
     describe "failure" do
@@ -36,7 +84,40 @@ describe ArticlesController do
         response.should render_template('new')
       end
     end
+
+    describe "success" do
+
+      before(:each) do
+        @attr = { :title => "Новый Год", 
+                  :rubric => "Записки",
+                  :content => "С Новым Годом!",
+                  :autor => "Никита Литвинков",
+                  :release => 2,
+                  :date => "2010-12-08" }
+        @article = Factory(:article, @attr)
+        Article.stub!(:new).and_return(@article)
+        @article.should_receive(:save).and_return(true)
+      end
+
+      it "should redirect to the articke show page" do
+        post :create, :article => @article
+        response.should redirect_to(article_path(@article))
+      end
+
+      it "should have a success  message" do
+        post :create, :article => @attr
+        flash[:success].should =~ /Статья успешно добавлена/
+      end
+    end
   end
 
+  describe "PUT 'update'" do
+
+    before(:each) do
+      @article = Article(:article)
+      Article.should_receive(:find).with(@article).and_return(@article)
+    end
+
+  end
 
 end
