@@ -1,7 +1,7 @@
 <h2>Новая статья</h2>
 
 <% form_for(@article) do |f| %>
-
+  <%= f.error_messages %>
 	<div class="field">
 		<%= f.label :title, "Заголовок" %><br />
 		<%= f.text_field :title %>
