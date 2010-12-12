@@ -20,4 +20,19 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
+
+	def edit
+		@title = "Редактирование статьи"
+		@article = Article.find(params[:id])
+	end
+
+	def update
+		@article = Article.find(params[:id])
+		if @article.update_attributes(params[:article])
+		else
+			@title = "Редактирование статьи"
+			@article = Article.find(params[:id])
+			render 'edit'
+		end
+	end
 end

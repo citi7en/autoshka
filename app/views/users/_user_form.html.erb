@@ -1,0 +1,26 @@
+<% form_for(@user) do |f| %>
+	<%= f.error_messages(
+							:header_message => "Видимо, что-то случилось",
+							:message => "Содержание полей не соотвествует условиям:",
+							:header_tag => :h1
+						)%>
+	<div class="field">
+		<%= f.label :name, "Имя пользователя" %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :email, "Адрес электронной почты" %><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class="field">
+	   <%= f.label :password, "Пароль" %><br />
+	   <%= f.password_field :password %>
+	 </div>
+	 <div class="field">
+	   <%= f.label :password_confirmation, "Подтверждение пароля" %><br />
+	   <%= f.password_field :password_confirmation %>
+	 </div>
+	 <div class="actions">
+	   <%= f.submit "#{action}" %>
+	 </div>
+<% end %>

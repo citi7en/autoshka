@@ -1,32 +1,4 @@
 <h1>Новая статья</h1>
 
-<% form_for(@article) do |f| %>
-  <%= f.error_messages %>
-	<div class="field">
-		<%= f.label :title, "Заголовок" %><br />
-		<%= f.text_field :title %>
-	</div>
-	<div class="field">
-		<%= f.label :rubric, "Рубрика" %><br />
-		<%= f.text_field :rubric %>
-	</div>
-	<div class="field">
-		<%= f.label :autor, "Автор" %><br />
-		<%= f.text_field :autor %>
-	</div>
-	<div class="field">
-		<%= f.label :release, "Номер выпуска" %><br />
-		<%= f.text_field :release %>
-	</div>
-	<div class="field">
-		<%= f.label :date, "Дата выпуска" %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :content, "Текст статьи" %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Сохранить" %>
-  </div>
-<% end %>
+<%= render :partial => "article_form",
+					 :locals  => { :action => 'Сохранить' } %>

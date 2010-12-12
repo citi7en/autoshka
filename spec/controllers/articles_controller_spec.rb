@@ -111,13 +111,47 @@ describe ArticlesController do
     end
   end
 
+	describe "GET 'edit'" do
+		
+		before(:each) do
+			@article = Factory(:article)
+		end
+
+		it "should be successful" do
+			get :edit, :id => @article
+			response.should be_success
+		end
+
+		it "should have the right title" do
+			get :edit, :id => @article
+			response.should have_tag("title", /Редактирование статьи/i)
+		end
+	end
+
   describe "PUT 'update'" do
 
     before(:each) do
-      @article = Article(:article)
+      @article = Factory(:article)
       Article.should_receive(:find).with(@article).and_return(@article)
     end
 
+		describe "failure" do
+
+			before(:each) do
+				@invalid_attr = { :title => "", :rubric => "", :autor => "", :date => "", :release => "" }
+				@user.should_receive(:update_attributes).and_return(false)
+			end
+
+			it "should render the 'edit' page" do
+				put :update, :id => @article, :article => @invalid_attr
+				response.should render_template('edit')
+			end
+
+			it "should have the right title" do
+				put :update, :id => @article, :article => @invalid_attr
+				response.should have_tag("title", /Редактирование статьи/i)
+			end
+		end
   end
 
 end

@@ -35,7 +35,7 @@ describe UsersController do
 
 		it "should include the user's name" do
 			get :show, :id => @user
-			response.should have_tag("h2", /#{@user.name}/)
+			response.should have_tag("h1", /#{@user.name}/)
 		end
 	end 
 
@@ -130,7 +130,7 @@ describe UsersController do
 			end
 
 			it "should have the right title" do
-				put :update, :id => @user, :user => @unvalid_attr
+				put :update, :id => @user, :user => @invalid_attr
 				response.should have_tag("title", /Редактирование профиля/i)
 			end
 		end
