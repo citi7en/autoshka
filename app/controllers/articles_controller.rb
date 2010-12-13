@@ -31,7 +31,6 @@ class ArticlesController < ApplicationController
 		if @article.update_attributes(params[:article])
 		else
 			@title = "Редактирование статьи"
-			@article = Article.find(params[:id])
 			render 'edit'
 		end
 	end

@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+#attr_accessible :title, :rubric, :autor, :content, :release, :date
 
 validates_presence_of :title, :rubric, :autor, :content, :release, :date
 validates_length_of :title, :rubric, :autor, :maximum => 100

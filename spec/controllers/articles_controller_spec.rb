@@ -138,8 +138,8 @@ describe ArticlesController do
 		describe "failure" do
 
 			before(:each) do
-				@invalid_attr = { :title => "", :rubric => "", :autor => "", :date => "", :release => "" }
-				@user.should_receive(:update_attributes).and_return(false)
+				@invalid_attr = { :title => "", :rubric => "", :autor => "", :date => "", :release => "", :content => "" }
+				@article.should_receive(:update_attributes).and_return(false)
 			end
 
 			it "should render the 'edit' page" do
@@ -152,6 +152,13 @@ describe ArticlesController do
 				response.should have_tag("title", /Редактирование статьи/i)
 			end
 		end
+
+    describe "success" do
+      before(:each) do
+        @attr = { :title => "Снусмумрик покидает Муми-Дол!", :rubric => "Новости Муми-Дола", :autor => "Воробей", :date => date.now, :release => "3", :content => "<p>ПРОПАЛА  СУМКА  МУМИ-МАМЫ!</p>  <p>Никаких  путеводных  нитей!  Розыски продолжаются. Неслыханное пиршество в вознаграждение за находку!</p>"}
+        @article.should_receive(:update_attributes).and_return(true)
+      end
+    end
   end
 
 end
