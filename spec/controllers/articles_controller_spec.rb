@@ -155,9 +155,19 @@ describe ArticlesController do
 
     describe "success" do
       before(:each) do
-        @attr = { :title => "Снусмумрик покидает Муми-Дол!", :rubric => "Новости Муми-Дола", :autor => "Воробей", :date => date.now, :release => "3", :content => "<p>ПРОПАЛА  СУМКА  МУМИ-МАМЫ!</p>  <p>Никаких  путеводных  нитей!  Розыски продолжаются. Неслыханное пиршество в вознаграждение за находку!</p>"}
+        @attr = { :title => "Снусмумрик покидает Муми-Дол!", :rubric => "Новости Муми-Дола", :autor => "Воробей", :date => "2010/12/13", :release => "3", :content => "<p>ПРОПАЛА  СУМКА  МУМИ-МАМЫ!</p>  <p>Никаких  путеводных  нитей!  Розыски продолжаются. Неслыханное пиршество в вознаграждение за находку!</p>"}
         @article.should_receive(:update_attributes).and_return(true)
       end
+
+			it "should redirect to the article show page" do
+				put :update, :id => @article, :article => @attr
+				response.should redirect_to(article_path(@article))
+			end
+
+			it "should have a flash message" do
+				put :update, :id => @article, :article => @attr
+				flash[:success].should =~ /Статья успешно обновлена/
+			end
     end
   end
 
