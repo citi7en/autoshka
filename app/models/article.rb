@@ -11,6 +11,7 @@ def self.find_by_year_month(year, month)
   from = requested_date -1
   to = requested_date >> 1
   Article.find(:all, :conditions => ["date BETWEEN ? and ?", from, to])
+	
 end
 
 end

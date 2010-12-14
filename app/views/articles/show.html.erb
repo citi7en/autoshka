@@ -1,18 +1,20 @@
+<% @article.each do |article| %>
 <h1>
-  <%= h @article.title %>
+  <%= h article.title %>
 </h1>
 <h2 class="article">
-  Рубрика: <%= h @article.rubric %>
+  Рубрика: <%= h article.rubric %>
 </h2>
 <h2 class="article">
-  Автор: <%= h @article.autor %>
+  Автор: <%= h article.autor %>
 </h2>
 <h2 class="article">
-  Номер выпуска: <%= h @article.release %>
+  Номер выпуска: <%= h article.release %>
 </h2>
 <h2 class="article">
-  Дата: <%= h @article.date %>
+  Дата: <%= h article.date %>
 </h2>
 <div class="article_content">
-  <%= @article.content %>
+  <%= article.content %>
 </div>
+<% end %>
