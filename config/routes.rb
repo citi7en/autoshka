@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.connect   'archive/*specs',
+                :controller => "articles",
+                :action     => "show"
 	map.resources :users
   map.resources :articles
 	map.resources :sessions, :only => [:new, :create, :destroy]

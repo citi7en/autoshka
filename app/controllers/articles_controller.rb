@@ -6,8 +6,9 @@ def new
 end
 
   def show
-    @article = Article.find(params[:id])
-    @title = @article.title
+    specs = params[:specs]
+    @article = Article.find_by_year_month(specs[0], specs[1])
+    @title = "OK"
   end
 
   def create
