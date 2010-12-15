@@ -63,6 +63,31 @@ describe ArticlesController do
     end
   end
 
+  describe "GET 'archive'" do
+
+    before(:each) do
+      @article = Factory(:article, :date => "2010-12-01")
+      @articles = [@article]
+      10.times do
+        @articles << Factory(:article, :date => Factory.next(:date))
+      end
+    end
+
+    it "should be successful" do
+       get :archive, :year => 2010, :month => 12
+       response.should be_success
+    end
+
+    it "should have the right title" do
+      get :archive, :year => 2010, :month => 12
+      response.should have_tag("title", /2010 12/)
+    end
+
+    it "should have an element for each article" do
+      get :archive, :year => 2010, :month => 12
+  end
+
+
   describe "POST 'create'" do
 
     describe "failure" do

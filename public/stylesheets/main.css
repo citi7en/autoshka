@@ -131,6 +131,18 @@ nav ul li a:hover {
 	white-space: nowrap;
 }
 
+.content {
+  display: block;
+}
+
+.article_archive {
+display: block;
+}
+.sidebar {
+  float: right;
+  white-space: nowrap;
+}
+
 ul.control {
 	margin: 0;
 	border: 0.1em solid #ff7f2a;

@@ -21,3 +21,7 @@ Factory.define :article do |article|
   article.date        "2010.12.07"
   article.content     "Привет как дела?"
 end
+
+Factory.sequence :date do |n|
+  "2010-12-#{n}"
+end
