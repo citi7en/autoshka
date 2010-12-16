@@ -18,5 +18,18 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
+
+    21.times do |n|
+      title = Faker::Lorem.sentence(3)
+      rubric = Faker::Lorem.sentence(2)
+      autor = Faker::Name.name
+      content = Faker::Lorem.paragraphs(15)
+      Article.create!(:title => title,
+                      :rubric => rubric,
+                      :autor => autor,
+                      :release => 21,
+                      :date => "2010-12-16",
+                      :content => content)
+    end
   end
 end

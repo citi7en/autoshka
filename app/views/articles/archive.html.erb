@@ -1,36 +1,18 @@
-<div class="sidebar">
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-<h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
-</div>
-<div class="article_archive">
+<div class="articlearchive column">
   <% @article.each do |article| %>
+  <div class = "article_block">
   <h1>
    <%= h article.title %>
   </h1>
-  <h2 class="article">
+  <h2>
     Рубрика: <%= h article.rubric %>
-  </h2>
-  <h2 class="article">
-    Автор: <%= h article.autor %>
-  </h2>
-  <h2 class="article">
-    Номер выпуска: <%= h article.release %>
-  </h2>
-  <h2 class="article">
-    Дата: <%= h article.date %>
   </h2>
   <div class="article_content">
     <%= article.content %>
   </div>
+  <h2 class="article">
+    Автор: <%= h article.autor %>
+  </h2>
+  </div>
   <% end %>
-</div>
-
-<div class="sidebar">
-  <h1> <%= "#{params[:year]} #{params[:month]}" %> </h1>
 </div>
