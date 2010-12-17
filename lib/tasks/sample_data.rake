@@ -23,7 +23,7 @@ namespace :db do
       title = Faker::Lorem.sentence(3)
       rubric = Faker::Lorem.sentence(2)
       autor = Faker::Name.name
-      content = Faker::Lorem.paragraphs(15)
+      content = Faker::Lorem.paragraphs(5)
       Article.create!(:title => title,
                       :rubric => rubric,
                       :autor => autor,

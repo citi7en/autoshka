@@ -201,14 +201,22 @@ ul.control {
 }
 
 .article_block h1 {
-  font-size:1.3em;
-margin:0;
+  font-size:1.5em;
+margin:0.5em 0;
 }
 
-.article_block h2 {
+.rubric {
   margin: 0em;
-  color: #696969;
+  color: #ff7f2a;
+  border-bottom: solid #ff7f2a;
 }
+
+.autor {
+  margin: 0em;
+  color:  #505050;
+  text-align: right;
+}
+
 
 .article_content {
   margin-top: 1em;

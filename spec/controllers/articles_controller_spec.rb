@@ -85,6 +85,7 @@ describe ArticlesController do
 
     it "should have an element for each article" do
       get :archive, :year => 2010, :month => 12
+    end
   end
 
 

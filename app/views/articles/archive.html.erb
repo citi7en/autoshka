@@ -1,17 +1,17 @@
 <div class="articlearchive column">
   <% @article.each do |article| %>
   <div class = "article_block">
-  <h1>
-   <%= h article.title %>
-  </h1>
-  <h2>
-    Рубрика: <%= h article.rubric %>
+  <h2 class = "rubric">
+    <%= h article.rubric %>
   </h2>
+  <h1>
+    <%= h article.title %>
+   </h1>
   <div class="article_content">
     <%= article.content %>
   </div>
-  <h2 class="article">
-    Автор: <%= h article.autor %>
+  <h2 class="article autor">
+    <%= h article.autor %>
   </h2>
   </div>
   <% end %>
