@@ -1,18 +1,28 @@
-<div class="articlearchive column">
-  <% @article.each do |article| %>
-  <div class = "article_block">
-  <h2 class = "rubric">
-    <%= h article.rubric %>
-  </h2>
-  <h1>
-    <%= h article.title %>
-   </h1>
-  <div class="article_content">
-    <%= article.content %>
-  </div>
-  <h2 class="article autor">
-    <%= h article.autor %>
-  </h2>
-  </div>
-  <% end %>
+<div class="article ">
+  <table>
+    <% @articles.each do |articles| %>
+      <tr>
+        <% articles.each do |article| %>
+          <td>
+            <div class = "article_block">
+              <h2 class = "rubric">
+                <%= h article.rubric %>
+              </h2>
+             <div class = "column">
+                <h1>
+                 <%= h article.title %>
+               </h1>
+                <div class="article_content">
+                   <%= article.content %>
+                </div>
+                <h2 class="article autor">
+                  <%= h article.autor %>
+                </h2>
+              </div>
+          </div>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
 </div>

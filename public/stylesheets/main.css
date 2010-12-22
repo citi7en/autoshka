@@ -205,6 +205,9 @@ ul.control {
 margin:0.5em 0;
 }
 
+.article td {
+  padding-right: 2em;
+}
 .rubric {
   margin: 0em;
   color: #ff7f2a;
@@ -213,7 +216,7 @@ margin:0.5em 0;
 
 .autor {
   margin: 0em;
-  color:  #505050;
+  color:  #996600;
   text-align: right;
 }
 

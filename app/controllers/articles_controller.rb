@@ -11,7 +11,7 @@ end
   end
 
   def archive
-    @article = Article.find_by_year_month(params[:year], params[:month])
+    @articles = Article.find_by_year_month(params[:year], params[:month])
     @title = "#{params[:year]} #{params[:month]}"
   end
 
