@@ -1,14 +1,17 @@
 <div class="article ">
   <table>
-    <% @articles.each do |articles| %>
-      <tr>
+    <tr>
+    <% @articles.in_groups_of((@articles.length/2.0).ceil, false) do |articles| %>
+        <td>
+          <table>
         <% articles.each do |article| %>
+        <tr>
           <td>
             <div class = "article_block">
               <h2 class = "rubric">
                 <%= h article.rubric %>
               </h2>
-             <div class = "column">
+             <div>
                 <h1>
                  <%= h article.title %>
                </h1>
@@ -19,10 +22,13 @@
                   <%= h article.autor %>
                 </h2>
               </div>
-          </div>
-          </td>
+            </div>
+            </td>
+          </tr>
         <% end %>
-      </tr>
+          </table>
+        </td>
     <% end %>
+    </tr>
   </table>
 </div>
