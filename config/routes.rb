@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.articles_archive   'articles/:year/:month',
+  map.articles_archive_year_month   'archive/:year/:month',
+                :controller => "articles",
+                :action     => "archive"
+  map.articles_archive_year 'archive/:year',
                 :controller => "articles",
                 :action     => "archive"
 	map.resources :users

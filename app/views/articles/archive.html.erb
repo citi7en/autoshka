@@ -3,10 +3,7 @@
     <tr>
     <% @articles.in_groups_of((@articles.length/2.0).ceil, false) do |articles| %>
         <td>
-          <table>
         <% articles.each do |article| %>
-        <tr>
-          <td>
             <div class = "article_block">
               <h2 class = "rubric">
                 <%= h article.rubric %>
@@ -23,10 +20,7 @@
                 </h2>
               </div>
             </div>
-            </td>
-          </tr>
         <% end %>
-          </table>
         </td>
     <% end %>
     </tr>
